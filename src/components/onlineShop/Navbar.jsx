@@ -4,14 +4,14 @@ const Navbar = () => {
         <>
             <div className="navbar font-roboto">
                 {/* desktop navbar */}
-                <div className="desktop flex justify-between items-center text-white bg-bg-primary py-2 px-16">
-                    <div className="menu">
+                <div className="desktop flex justify-between items-center text-white bg-bg-primary py-2 px-8 md:px-16">
+                    <div className="menu hidden md:flex">
                         <ul className="flex gap-8">
                             <li>
                                 <Link to={'/'}>Home</Link>
                             </li>
                             <li>
-                                <Link to={'#'}>Products</Link>
+                                <Link to={'/produk'}>Products</Link>
                             </li>
                             <li>
                                 <Link to={'#'}>About</Link>
@@ -22,13 +22,13 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="logo">
-                        <h1 className="text-2xl font-semibold">LookingFor</h1>
+                        <h1 className="text-2xl font-semibold">CariApaDek</h1>
                     </div>
-                    <div className="login bg-white px-4 flex items-center rounded-md ring-2 ring-teal-100">
+                    <div className="login hidden bg-white px-4 md:flex items-center rounded-md ring-2 ring-teal-100">
                         <Link className="text-teal-500">Login</Link>
                     </div>
-                    <div className="btnNav">
-                        <Link><i class="fa-solid fa-bars text-xl"></i></Link>
+                    <div className="btnNav flex md:hidden">
+                        <Link><i className="fa-solid fa-bars text-xl"></i></Link>
                     </div>
                 </div>
                 {/* end of desktop navbar */}

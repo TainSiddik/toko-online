@@ -5,12 +5,13 @@ const Hero = () => {
         <>
             <div className="hero font-roboto md:flex justify-around items-center">
                 <div className="left ">
-                    <h1 className="text-xl">Welcome to <span className="text-teal-500 text-3xl font-semibold">LookingFor</span></h1>
-                    <p className="pt-4">Find your best fashion Here</p>
+                    <h3 className="text-lg">Selamat datang,</h3>
+                    <h1 className="text-teal-500 text-3xl font-semibold">Cari Apa Dek ?</h1>
+                    <p className="pt-4">Cari aja dek, kita semua ada</p>
                     <h3 className="text-2xl pt-8">Discount up to</h3>
                     <h1 className="text-7xl text-teal-500">90%</h1>
                     <div className="link bg-teal-500 bg-opacity-10 px-8 py-1 rounded-md ring-2 ring-teal-300 text-center text-teal-500 mt-4 hover:text-white hover:bg-opacity-100">
-                        <Link>Find your items</Link>
+                        <Link to={'/produk'}>Cari - cari</Link>
                     </div>
                 </div>
 
