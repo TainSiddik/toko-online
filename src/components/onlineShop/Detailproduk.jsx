@@ -5,7 +5,7 @@ const Detailproduk = () => {
 
     const { kategori_id, id } = useParams()
     const [produk, setProduk] = useState([])
-    const [selectedImage, setSelectedImage] = useState("")
+    const [selectedImage, setSelectedImage] = useState(null)
 
     const fetchProduk = async () => {
         try {
@@ -43,23 +43,29 @@ const Detailproduk = () => {
     return (
         <>
             <div className="detail md:flex justify-between gap-4 font-roboto">
+                <div className="produkMobile md:hidden">
+                    <h1 className="text-xl font-semibold">{produk.produk}</h1>
+                </div>
+                <div className="kategoriMobile w-36 text-white mt-2 mb-4 md:hidden">
+                    <h3 className="text-[12px] px-2 bg-teal-500 ring-2 ring-teal-200 text-center rounded-md">{produk.kategori?.kategori}</h3>
+                </div>
                 <div className="image">
-                    <div className="img w-[290px] h-[290px] ring-1 ring-teal-500 rounded-md hover:scale-105 transition-transform duration-300 ease-in-out">
-                        <img src={selectedImage} alt="" className="rounded-md w-full h-full object-fill" />
+                    <div className="img w-64 h-64 md:w-[290px] md:h-[290px] ring-1 ring-teal-500 rounded-md hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <img src={selectedImage || "default-image.jpg"} alt="image" className="rounded-md w-full h-full object-fill" />
                     </div>
                     <div className="subImg flex gap-4 mt-4">
                         {produk.gambar?.slice().reverse().map((img, index) => (
                             <button className="w-8" key={index} onClick={() => setSelectedImage(img.url)}>
-                                <img src={img.url} alt="" className="w-full h-9 rounded-md ring-1 ring-teal-500" />
+                                <img src={img.url} alt="subimage" className="w-full h-9 rounded-md ring-1 ring-teal-500" />
                             </button>
                         ))}
                     </div>
                 </div>
-                <div className="info mt-8 md:mt-0">
-                    <div className="produk">
+                <div className="info mt-4 md:mt-0">
+                    <div className="produk hidden md:block">
                         <h1 className="text-xl font-semibold">{produk.produk}</h1>
                     </div>
-                    <div className="kategori w-36 text-white mt-2">
+                    <div className="kategori hidden md:block w-36 text-white mt-2">
                         <h3 className="text-[12px] px-2 bg-teal-500 ring-2 ring-teal-200 text-center rounded-md">{produk.kategori?.kategori}</h3>
                     </div>
 
