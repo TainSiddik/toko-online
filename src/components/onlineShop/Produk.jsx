@@ -16,6 +16,7 @@ const Produk = ({ selectedCategory }) => {
     }
 
     useEffect(() => {
+        document.title = "Produk";
         getProduk()
     }, [])
 

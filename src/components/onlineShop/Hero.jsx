@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom"
 
 const Hero = () => {
+    useEffect(() => {
+        document.title = "Home";
+    }, []);
     return (
         <>
             <div className="hero font-roboto md:flex justify-around items-center">
