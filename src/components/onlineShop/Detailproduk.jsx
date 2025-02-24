@@ -17,6 +17,7 @@ const Detailproduk = () => {
     }
 
     useEffect(() => {
+        document.title = "Detail Produk"
         fetchProduk()
     }, [])
 

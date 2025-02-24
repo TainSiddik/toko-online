@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect } from "react"
 import { Link } from "react-router-dom"
 
 const Hero = () => {
     useEffect(() => {
-        document.title = "Home";
+        document.title = "Home"
     }, []);
     return (
         <>
