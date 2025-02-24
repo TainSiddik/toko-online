@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom"
 const Login = () => {
+    useEffect(() => {
+        document.title = "Login"
+    }, [])
     return (
         <>
             <div className="grid place-items-center w-screen h-screen bg-bg-primary font-roboto text-white">

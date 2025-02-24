@@ -1,6 +1,11 @@
+import { useEffect } from "react"
 import { Link } from "react-router-dom"
 
 const Register = () => {
+
+    useEffect(() => {
+        document.title = "Register"
+    }, [])
     return (
         <>
             <div className="grid place-items-center w-screen h-screen bg-bg-primary font-roboto text-white">
