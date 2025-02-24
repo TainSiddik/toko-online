@@ -5,12 +5,17 @@ const Detailproduk = () => {
 
     const { kategori_id, id } = useParams()
     const [produk, setProduk] = useState([])
+    const [selectedImage, setSelectedImage] = useState("")
 
     const fetchProduk = async () => {
         try {
             const response = await axios.get(`http://localhost:8000/api/produk/${kategori_id}/${id}`);
-            setProduk(response.data);
-            console.log(response.data);
+            setProduk(response.data)
+
+            // Set default gambar utama ke gambar terakhir dalam array
+            if (response.data.gambar && response.data.gambar.length > 0) {
+                setSelectedImage(response.data.gambar[response.data.gambar.length - 1].url);
+            }
         } catch (error) {
             console.error("Gagal mengambil data produk:", error);
         }
@@ -39,12 +44,12 @@ const Detailproduk = () => {
         <>
             <div className="detail md:flex justify-between gap-4 font-roboto">
                 <div className="image">
-                    <div className="img w-64 ring-1 ring-teal-500 rounded-md hover:scale-105 transition-transform duration-300 ease-in-out">
-                        <img src={produk.gambar?.[produk.gambar.length - 1]?.url} alt="" className="rounded-md" />
+                    <div className="img w-[290px] h-[290px] ring-1 ring-teal-500 rounded-md hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <img src={selectedImage} alt="" className="rounded-md w-full h-full object-fill" />
                     </div>
                     <div className="subImg flex gap-4 mt-4">
                         {produk.gambar?.slice().reverse().map((img, index) => (
-                            <button className="w-8" key={index}>
+                            <button className="w-8" key={index} onClick={() => setSelectedImage(img.url)}>
                                 <img src={img.url} alt="" className="w-full h-9 rounded-md ring-1 ring-teal-500" />
                             </button>
                         ))}
