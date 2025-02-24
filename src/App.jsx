@@ -5,6 +5,8 @@ import Hero from "./components/onlineShop/Hero"
 import Sidebar from "./components/onlineShop/Sidebar"
 import Produk from "./components/onlineShop/Produk"
 import Detailproduk from "./components/onlineShop/Detailproduk"
+import Login from "./components/onlineShop/Login"
+import Register from "./components/onlineShop/Register"
 
 function App() {
 
@@ -45,6 +47,18 @@ function App() {
               <div className="detail pt-4 mb-2 px-8 md:px-16">
                 <Detailproduk />
               </div>
+            </>
+          } />
+
+          <Route path="/login" element={
+            <>
+              <Login />
+            </>
+          } />
+
+          <Route path="/register" element={
+            <>
+              <Register />
             </>
           } />
         </Routes>

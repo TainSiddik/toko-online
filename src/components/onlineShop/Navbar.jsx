@@ -25,7 +25,7 @@ const Navbar = () => {
                         <h1 className="text-2xl font-semibold">CariApaDek</h1>
                     </div>
                     <div className="login hidden bg-white px-4 md:flex items-center rounded-md ring-2 ring-teal-100">
-                        <Link className="text-teal-500">Login</Link>
+                        <Link to={'/login'} className="text-teal-500">Login</Link>
                     </div>
                     <div className="btnNav flex md:hidden">
                         <Link><i className="fa-solid fa-bars text-xl"></i></Link>
