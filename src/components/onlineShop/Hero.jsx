@@ -14,8 +14,8 @@ const Hero = () => {
                     <p className="pt-4">Cari aja dek, kita semua ada</p>
                     <h3 className="text-2xl pt-8">Discount up to</h3>
                     <h1 className="text-7xl text-teal-500">90%</h1>
-                    <div className="link bg-teal-500 bg-opacity-10 px-8 py-1 rounded-md ring-2 ring-teal-300 text-center text-teal-500 mt-4 hover:text-white hover:bg-opacity-100">
-                        <Link to={'/produk'}>Cari - cari</Link>
+                    <div className="link mt-4 w-full">
+                        <Link to={'/produk'} className="block w-full bg-teal-500 bg-opacity-10 py-1 rounded-md ring-2 ring-teal-300 text-center text-teal-700 hover:text-white hover:bg-opacity-90 transition-all duration-300 ease-in-out">Cari - cari</Link>
                     </div>
                 </div>
 

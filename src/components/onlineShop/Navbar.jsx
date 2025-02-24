@@ -24,8 +24,8 @@ const Navbar = () => {
                     <div className="logo">
                         <h1 className="text-2xl font-semibold">CariApaDek</h1>
                     </div>
-                    <div className="login hidden bg-white px-4 md:flex items-center rounded-md ring-2 ring-teal-100">
-                        <Link to={'/login'} className="text-teal-500">Login</Link>
+                    <div className="login hiddenmd md:flex">
+                        <Link to={'/login'} className="text-white-500 bg-teal-500 bg-opacity-0 px-4 items-center rounded-md ring-2 ring-teal-100 hover:bg-opacity-90 transition-all duration-300 ease-in-out">Login</Link>
                     </div>
                     <div className="btnNav flex md:hidden">
                         <Link><i className="fa-solid fa-bars text-xl"></i></Link>
