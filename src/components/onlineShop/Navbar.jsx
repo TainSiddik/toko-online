@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 const Navbar = () => {
     return (
         <>
@@ -8,16 +8,16 @@ const Navbar = () => {
                     <div className="menu hidden md:flex">
                         <ul className="flex gap-8">
                             <li>
-                                <Link to={'/'}>Home</Link>
+                                <NavLink to={'/'} className={({ isActive }) => isActive ? "text-teal-100" : "text-white"}>Home</NavLink>
                             </li>
                             <li>
-                                <Link to={'/produk'}>Products</Link>
+                                <NavLink to={'/produk'} className={({ isActive }) => isActive ? "text-teal-100" : "text-white"}>Products</NavLink>
                             </li>
                             <li>
-                                <Link to={'#'}>About</Link>
+                                <NavLink to={'/about'} className={({ isActive }) => isActive ? "text-teal-100" : "text-white"}>About</NavLink>
                             </li>
                             <li>
-                                <Link to={'#'}>Contact</Link>
+                                <NavLink to={'/contact'} className={({ isActive }) => isActive ? "text-teal-100" : "text-white"}>Contact</NavLink>
                             </li>
                         </ul>
                     </div>
