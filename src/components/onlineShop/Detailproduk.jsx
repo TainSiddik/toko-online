@@ -82,7 +82,18 @@ const Detailproduk = () => {
 
                     <div className="deskripsi mt-4">
                         <h3 className="font-semibold">Deskripsi</h3>
-                        <p className="text-sm pt-2">{produk.deskripsi}</p>
+                        {produk && produk.deskripsi ? (
+                            <p className="text-sm pt-2">
+                                {produk.deskripsi.split("\n").map((line, index) => (
+                                    <span key={index}>
+                                        {line}
+                                        <br />
+                                    </span>
+                                ))}
+                            </p>
+                        ) : (
+                            <p className="text-sm pt-2">Memuat deskripsi...</p>
+                        )}
                     </div>
 
                 </div>
@@ -109,7 +120,7 @@ const Detailproduk = () => {
                                         onChange={(e) => {
                                             const value = e.target.value.replace(/\D/g, ""); // Hanya angka
                                             if (value !== "" && parseInt(value) >= 1) {
-                                                setJumlah(parseInt(value));
+                                                setJumlah(parseInt(value))
                                             }
                                         }}
                                     />

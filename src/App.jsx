@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { useState } from "react";
+import { ToastContainer } from 'react-toastify';
 import Navbar from "./components/onlineShop/Navbar"
 import Hero from "./components/onlineShop/Hero"
 import Sidebar from "./components/onlineShop/Sidebar"
@@ -58,6 +59,7 @@ function App() {
 
           <Route path="/register" element={
             <>
+              <ToastContainer />
               <Register />
             </>
           } />
